@@ -1,6 +1,6 @@
 #include "gamescene.h"
 
-GameScene::GameScene()
+GameScene::GameScene(InputManager* inputManager) : inputManager(inputManager)
 {
     square.setPointCount(4);
     square.setPoint(0, sf::Vector2f(150, 100));
@@ -26,7 +26,13 @@ void GameScene::processInput()
 
 void GameScene::update(float dt)
 {
-    handleMovement(triangle, dt);
+    float movementSpeed = 200.f;
+
+    if (inputManager->isHeld(sf::Keyboard::Key::Left))
+        triangle.move({-movementSpeed * dt, 0.f});
+
+    if (inputManager->isHeld(sf::Keyboard::Key::Right))
+        triangle.move({movementSpeed * dt, 0.f});
 }
 
 void GameScene::render(sf::RenderWindow& window)

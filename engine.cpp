@@ -6,7 +6,7 @@ Engine::Engine() : window(sf::VideoMode({800, 600}), "Soon to be game engine")
 {
     window.setVisible(true);
     window.requestFocus();
-    currentScene = new MenuScene(this);
+    currentScene = new MenuScene(this, &inputManager);
 }
 
 void Engine::run()
