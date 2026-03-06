@@ -3,7 +3,7 @@
 void handleMovement(sf::ConvexShape& shape, float dt) 
 {
  // Movement Speed of triangle
-        float movementSpeed = 100.f;
+        float movementSpeed = 2.f;
 
         // Movement of triangle
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))

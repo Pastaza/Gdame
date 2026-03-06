@@ -1,0 +1,40 @@
+#include "engine.h"
+#include "gamescene.h"
+#include "menuscene.h"
+
+Engine::Engine() : window(sf::VideoMode({800, 600}), "Soon to be game engine")
+{
+    window.setVisible(true);
+    window.requestFocus();
+    currentScene = new MenuScene(this);
+}
+
+void Engine::run()
+{
+    while (window.isOpen())
+    {
+        float dt = gameClock.restart().asSeconds();
+
+        // INPUT
+        while (const std::optional event = window.pollEvent())
+        {
+            if (event->is<sf::Event::Closed>())
+                window.close();
+        }
+        currentScene->processInput();
+
+        // UPDATE
+        currentScene->update(dt);
+
+        // RENDER
+        window.clear(sf::Color::White);
+        currentScene->render(window);
+        window.display();
+    }
+}
+
+void Engine::switchScene(Scene* newScene)
+{
+    delete currentScene;
+    currentScene = newScene;
+}
