@@ -1,10 +1,11 @@
 #include <SFML/Graphics.hpp> //Used to create the window
 #include <optional> // optional huh?
 #include <vector> //Very Vectory!
+#include "movement.h" // Movement
 
 int main()
 {
-    // SFML 3 uses sf::Vector2u for the size inside VideoMode
+    // SFML 3 to create the window
     sf::RenderWindow window(sf::VideoMode({800, 600}), "Soon to be game engine");
    
 
@@ -37,8 +38,14 @@ int main()
     triangle.setOutlineColor(sf::Color::Black);
     triangle.setOutlineThickness(4);
 
+    sf::Clock gameClock;
+    
     while (window.isOpen())
     {
+
+        float dt = gameClock.restart().asSeconds();
+        handleMovement(triangle, dt);
+
         // pollEvent() now returns an optional; we check it in the while loop
         while (const std::optional event = window.pollEvent())
         {
