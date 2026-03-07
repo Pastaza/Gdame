@@ -1,12 +1,12 @@
 #include "engine.h"
 #include "gamescene.h"
-#include "menuscene.h"
+#include "EditorScene.h"
 
 Engine::Engine() : window(sf::VideoMode({800, 600}), "Soon to be game engine")
 {
     window.setVisible(true);
     window.requestFocus();
-    currentScene = new MenuScene(this, &inputManager);
+    currentScene = new EditorScene(this, &inputManager);
 }
 
 void Engine::run()

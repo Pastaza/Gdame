@@ -1,0 +1,14 @@
+void MenuScene::processInput(sf::RenderWindow& window)
+{
+    
+}
+
+void MenuScene::update(float dt)
+{
+
+}
+
+void MenuScene::render(sf::RenderWindow& window)
+{
+  
+}
