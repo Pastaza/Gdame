@@ -21,7 +21,7 @@ void Engine::run()
             if (event->is<sf::Event::Closed>())
                 window.close();
         }
-        currentScene->processInput();
+        currentScene->processInput(window);
 
         // UPDATE
         currentScene->update(dt);

@@ -5,7 +5,7 @@ class GameScene : public Scene
 {
 public:
     GameScene(InputManager* inputManager);
-    void processInput() override;
+    void processInput(sf::RenderWindow& window) override;
     void update(float dt) override;
     void render(sf::RenderWindow& window) override;
 private:

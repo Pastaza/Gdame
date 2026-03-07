@@ -20,7 +20,7 @@ GameScene::GameScene(InputManager* inputManager) : inputManager(inputManager)
     triangle.setOutlineThickness(4);
 }
 
-void GameScene::processInput()
+void GameScene::processInput(sf::RenderWindow& window)
 {
 }
 
