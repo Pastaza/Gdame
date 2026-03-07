@@ -59,14 +59,14 @@ void EditorScene::processInput(sf::RenderWindow& window)
 
 void EditorScene::update(float dt)
 {
-
+   viewport.update(dt);
 }
 
 void EditorScene::render(sf::RenderWindow& window)
 {
-  window.draw(viewScene);
-  window.draw(fileExplorer);
-  window.draw(objectsList);
-  window.draw(propertiesTab);
-  window.draw(minipulationBar);
+    viewport.render(window);
+    window.draw(fileExplorer);
+    window.draw(objectsList);
+    window.draw(propertiesTab);
+    window.draw(minipulationBar);
 }
