@@ -24,8 +24,9 @@ void GameScene::processInput(sf::RenderWindow& window)
 {
 }
 
-void GameScene::update(float dt)
+void GameScene::update(float dt, sf::RenderWindow& window)
 {
+(void)window;
     float movementSpeed = 200.f;
 
     if (inputManager->isHeld(sf::Keyboard::Key::Left))

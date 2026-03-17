@@ -16,8 +16,9 @@ void MenuScene::processInput(sf::RenderWindow& window)
         engine->switchScene(new GameScene(&engine->inputManager));
 }
 
-void MenuScene::update(float dt)
+void MenuScene::update(float dt, sf::RenderWindow& window)
 {
+(void)window;
 }
 
 void MenuScene::render(sf::RenderWindow& window)

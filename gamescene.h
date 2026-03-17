@@ -6,7 +6,7 @@ class GameScene : public Scene
 public:
     GameScene(InputManager* inputManager);
     void processInput(sf::RenderWindow& window) override;
-    void update(float dt) override;
+    void update(float dt, sf::RenderWindow& window) override;
     void render(sf::RenderWindow& window) override;
 private:
     sf::ConvexShape triangle;

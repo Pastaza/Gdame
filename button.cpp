@@ -6,7 +6,7 @@ Button::Button(float x, float y, float width, float height, sf::Color color, con
     shape.setSize({width, height});
     shape.setFillColor(color);
 
-    font.openFromFile("/System/Library/Fonts/Helvetica.ttc");
+    (void)font.openFromFile("/System/Library/Fonts/Helvetica.ttc");
     label = new sf::Text(font, labelText, 30);
     label->setFillColor(sf::Color::White);
 

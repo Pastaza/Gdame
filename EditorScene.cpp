@@ -57,9 +57,9 @@ void EditorScene::processInput(sf::RenderWindow& window)
    
 }
 
-void EditorScene::update(float dt)
+void EditorScene::update(float dt, sf::RenderWindow& window)
 {
-   viewport.update(dt);
+  viewport.update(dt, window);
 }
 
 void EditorScene::render(sf::RenderWindow& window)

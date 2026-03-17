@@ -24,7 +24,7 @@ void Engine::run()
         currentScene->processInput(window);
 
         // UPDATE
-        currentScene->update(dt);
+        currentScene->update(dt, window);
 
         // RENDER
         window.clear(sf::Color::White);
